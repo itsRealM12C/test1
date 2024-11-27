@@ -20,29 +20,29 @@ body {
 .app {
   width: 150px;
   height: 150px;
-  background-color: #777;
+  position: relative;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden; /* Ensures that the image fills the button without spilling */
   border: 2px solid white;
   cursor: pointer;
   transition: border-color 0.2s, transform 0.2s;
-  position: relative;
 }
 
 .app-icon {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the button */
 }
 
 .app p {
+  position: absolute;
+  bottom: 10px; /* Positioned at the bottom of the button */
+  width: 100%;
+  text-align: center;
   font-size: 18px;
   color: white;
-  margin-top: 10px;
   font-weight: bold;
+  background: rgba(0, 0, 0, 0.5); /* Background for text to be readable on top of images */
 }
 
 .app.selected {
